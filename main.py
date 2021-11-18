@@ -123,6 +123,14 @@ while True:
         for i in M:
             print(i, "\n")
         print("\n \n \n \n \n")
+        xm = 0
+        ym = 0
+        for i in M:
+            ym = ym + 1
+            for j in i:
+                xm = xm + 1
+                if j == 0:
+                    matrix[ym, xm] = 0
         M = [[0, 0, 0, 0, 0, 0, 0, 0],
      [0, 0, 0, 0, 0, 0, 0, 0],
      [0, 0, 0, 0, 0, 0, 0, 0],
@@ -131,7 +139,6 @@ while True:
      [0, 0, 0, 0, 0, 0, 0, 0],
      [0, 0, 0, 0, 0, 0, 0, 0],
      [0, 0, 0, 0, 0, 0, 0, 0]]
-        matrix.fill(0)
     """manchmal passt es nicht ganz weil Marix noch nicht passen uberschrieben wurde. sollte hinderher hoffentlich kein Problem darstellen"""
 
     clock.tick(50) # sollt FPS auf 50 begrenzen
