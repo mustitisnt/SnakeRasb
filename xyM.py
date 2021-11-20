@@ -1,28 +1,22 @@
-def xyM(x, y,):
-    x = int(x/50) - 1
-    y = int(y/50) - 1
-    M=[[0,0,0,0,0,0,0,0],
-       [0,0,0,0,0,0,0,0],
-       [0,0,0,0,0,0,0,0],
-       [0,0,0,0,0,0,0,0],
-       [0,0,0,0,0,0,0,0],
-       [0,0,0,0,0,0,0,0],
-       [0,0,0,0,0,0,0,0],
-       [0,0,0,0,0,0,0,0]]
-    """R wie reset"""
-    Mr = [[0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0]]
-    try:
-        M[y][x] = 1
-    except:
-        print("Auserhalbt der Reichweite der Matrix")
-    for i in M:
-        print(i, "\n")
-    M = Mr
-    print("\n \n \n \n \n")
+# Import all board pins.
+import time
+import board
+import busio
+from adafruit_ht16k33 import matrix
+
+# Create the I2C interface.
+i2c = busio.I2C(board.SCL, board.SDA)
+
+# creates a 8x8 matrix:
+matrix = matrix.Matrix8x8(i2c)
+
+# edges of an 8x8 matrix
+col_max = 8
+row_max = 8
+
+# Clear the matrix.
+matrix.fill(0)
+x = 0
+y = 0
+
+matrix[y, x] = 2
