@@ -127,7 +127,7 @@ while True:
         try:
             M[y][x] = 1
             """Warscheinlich gibt es verschiebungen mit x und y und so"""
-          #  matrix[y, x] = 2
+            matrix[y, x] = 2
         except:
             print("Auserhalbt der Reichweite der Matrix")
         for i in M:
